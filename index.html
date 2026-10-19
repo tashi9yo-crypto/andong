@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>안동 1박 2일</title>
+<meta name="description" content="10월 23~24일 안동 1박 2일 자가용 여행 — 시간표, 주차, 식당, 축전·줄불놀이 예약">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap">
+<style>
+:root{
+  --bg:#f4f1ea; --card:#ffffff; --ink:#1d1b18; --sub:#56504a; --line:#e3ddd2;
+  --accent:#9a3b23; --accent-soft:#f6e8e2; --blue:#2f5d7c; --blue-soft:#e6eef4;
+  --green:#3f6b3a; --green-soft:#e8f0e5; --gold:#8a6a12; --gold-soft:#f7efd9;
+  --fs:19.5px;
+}
+*{box-sizing:border-box}
+html{font-size:var(--fs);-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Pretendard,-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;line-height:1.78;word-break:keep-all}
+a{color:var(--blue);text-underline-offset:3px}
+.wrap{max-width:760px;margin:0 auto;padding:0 16px 80px}
+h1,h2,h3{font-family:"Gowun Batang",serif;line-height:1.35;margin:0}
+header.hero{padding:40px 0 24px}
+.hero .eyebrow{font-size:.8rem;color:var(--accent);font-weight:700;letter-spacing:.04em}
+.hero h1{font-size:2.1rem;margin:6px 0 10px}
+.hero p{margin:0;color:var(--sub)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.chip{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:.82rem;color:var(--sub)}
+.fsbar{position:sticky;top:0;z-index:5;background:rgba(244,241,234,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);margin:0 -16px;padding:8px 16px;display:flex;gap:6px;align-items:center;overflow-x:auto}
+.fsbar a.nav{font-size:.82rem;text-decoration:none;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:8px;padding:4px 10px;white-space:nowrap}
+.fsbar .sp{flex:1}
+.fsbar button{font:inherit;font-size:.8rem;border:1px solid var(--line);background:var(--card);border-radius:8px;padding:4px 10px;cursor:pointer;color:var(--ink)}
+.fsbar button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+section{margin-top:36px}
+section > h2{font-size:1.45rem;margin-bottom:14px;display:flex;align-items:baseline;gap:10px}
+section > h2 small{font-family:Pretendard,sans-serif;font-size:.8rem;color:var(--sub);font-weight:500}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 18px}
+.card + .card{margin-top:12px}
+.note{border-left:4px solid var(--gold);background:var(--gold-soft);border-radius:10px;padding:12px 14px;font-size:.92rem;margin-top:12px}
+.note.red{border-color:var(--accent);background:var(--accent-soft)}
+.note.blue{border-color:var(--blue);background:var(--blue-soft)}
+/* checklist */
+.check{list-style:none;margin:0;padding:0}
+.check li{display:flex;gap:12px;padding:10px 0;border-bottom:1px dashed var(--line)}
+.check li:last-child{border-bottom:0}
+.check input{width:22px;height:22px;margin-top:5px;flex:none;accent-color:var(--green)}
+.check li.done .t{text-decoration:line-through;color:#9a948c}
+.check .t b{display:block}
+.check .t span{font-size:.88rem;color:var(--sub)}
+/* timeline */
+.day{margin-top:8px}
+.tl{position:relative;margin:0;padding:0;list-style:none}
+.tl:before{content:"";position:absolute;left:58px;top:8px;bottom:8px;width:2px;background:var(--line)}
+.tl > li{position:relative;display:grid;grid-template-columns:58px 1fr;gap:16px;padding:6px 0 14px}
+.tl .time{font-weight:800;font-size:.95rem;text-align:right;padding-top:14px;font-variant-numeric:tabular-nums}
+.tl .box{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;position:relative}
+.tl .box:before{content:"";position:absolute;left:-23px;top:20px;width:12px;height:12px;border-radius:50%;background:var(--card);border:3px solid var(--accent)}
+.tl .box.move{background:transparent;border-style:dashed}
+.tl .box.move:before{border-color:#b9b1a5}
+.tl .box.food:before{border-color:var(--gold)}
+.tl .box.opt{border-color:var(--blue)}
+.tl .box.opt:before{border-color:var(--blue)}
+.tl .box.now{box-shadow:0 0 0 3px var(--green)}
+.tl h3{font-size:1.12rem}
+.tl .lead{margin:4px 0 0;color:var(--sub);font-size:.94rem}
+dl.kv{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;margin:10px 0 0;font-size:.9rem}
+dl.kv dt{color:var(--sub);font-weight:600;white-space:nowrap}
+dl.kv dd{margin:0}
+.tag{display:inline-block;font-size:.72rem;font-weight:700;border-radius:6px;padding:1px 7px;vertical-align:2px;margin-left:6px}
+.tag.ev{background:var(--accent-soft);color:var(--accent)}
+.tag.bk{background:var(--blue-soft);color:var(--blue)}
+.tag.fd{background:var(--gold-soft);color:var(--gold)}
+.links{margin-top:8px;display:flex;flex-wrap:wrap;gap:6px}
+.links a{font-size:.82rem;text-decoration:none;border:1px solid var(--line);border-radius:8px;padding:3px 9px;background:#fbfaf7;color:var(--ink)}
+.links a:hover{border-color:var(--blue)}
+/* tabs */
+.tabs{display:flex;gap:6px;margin:4px 0 12px}
+.tabs button{flex:1;font:inherit;font-size:.92rem;font-weight:700;padding:10px;border-radius:10px;border:1px solid var(--line);background:var(--card);cursor:pointer;color:var(--ink)}
+.tabs button.on{background:var(--blue);border-color:var(--blue);color:#fff}
+.pane{display:none}.pane.on{display:block}
+/* table */
+.tbl{width:100%;border-collapse:collapse;font-size:.88rem}
+.tbl th,.tbl td{text-align:left;padding:9px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+.tbl th{font-size:.78rem;color:var(--sub);font-weight:700}
+.tbl td:first-child{font-weight:700;white-space:nowrap}
+.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+/* food */
+.foods{display:grid;grid-template-columns:1fr;gap:12px}
+@media(min-width:640px){.foods{grid-template-columns:1fr 1fr}}
+.food-c{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;display:flex;flex-direction:column}
+.food-c .cat{font-size:.75rem;font-weight:800;color:var(--gold);letter-spacing:.02em}
+.food-c h3{font-size:1.15rem;margin:2px 0 6px}
+.food-c p{margin:0;font-size:.9rem;color:var(--sub)}
+.food-c .meta{font-size:.84rem;margin-top:8px}
+.food-c .links{margin-top:auto;padding-top:10px}
+.food-c .when{font-size:.78rem;background:var(--green-soft);color:var(--green);border-radius:6px;padding:1px 7px;font-weight:700;display:inline-block;margin-bottom:6px}
+footer{margin-top:44px;font-size:.8rem;color:var(--sub)}
+footer a{color:var(--sub)}
+@media(max-width:480px){
+  .hero h1{font-size:1.75rem}
+  .tl:before{left:50px}
+  .tl > li{grid-template-columns:44px 1fr;gap:14px}
+  .tl .time{font-size:.8rem;letter-spacing:-.02em}
+  .tl .box:before{left:-17px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <div class="eyebrow">2026. 10. 23 (금) – 24 (토) · 자가용</div>
+  <h1>안동 1박 2일</h1>
+  <p>문정에서 출발해 원도심 한옥에서 하룻밤. 첫날은 도산서원과 월영교, 둘째 날은 병산서원·하회마을·부용대.</p>
+  <div class="chips">
+    <span class="chip">🏠 108한옥 · 법상윗길 6</span>
+    <span class="chip">🚗 편도 약 3시간</span>
+    <span class="chip">🌇 일몰 17시 45분경</span>
+    <span class="chip">🎭 세계유산축전 기간 (~10/25)</span>
+  </div>
+</header>
+
+<nav class="fsbar">
+  <a class="nav" href="#todo">출발 전</a>
+  <a class="nav" href="#d1">1일차</a>
+  <a class="nav" href="#d2">2일차</a>
+  <a class="nav" href="#food">식당</a>
+  <a class="nav" href="#info">시간·요금</a>
+  <span class="sp"></span>
+  <button data-fs="17.5px">작게</button>
+  <button data-fs="19.5px" class="on">보통</button>
+  <button data-fs="22px">크게</button>
+</nav>
+
+<!-- ===================== 출발 전 ===================== -->
+<section id="todo">
+  <h2>출발 전 할 일 <small>체크하면 저장돼요</small></h2>
+  <div class="card">
+    <ul class="check" id="checklist">
+      <li data-k="c1"><input type="checkbox" id="c1"><label class="t" for="c1"><b>줄불놀이 볼지 결정 → 사전예약 확인</b><span>24일(토) 18:00–20:00, 1인 1만원(하회마을 입장 포함). 경북봐야지에서 예약. 매진이면 당일 13시부터 매표소 옆 현장판매 300매(선착순).</span></label></li>
+      <li data-k="c2"><input type="checkbox" id="c2"><label class="t" for="c2"><b>까치구멍집 금요일 저녁 전화예약</b><span>☎ 054-821-1056 · 마지막 주문 19:30</span></label></li>
+      <li data-k="c3"><input type="checkbox" id="c3"><label class="t" for="c3"><b>108한옥에 체크인 시간·주차 문의</b><span>점심 때 차를 숙소에 먼저 대 둘 수 있는지도 물어보기</span></label></li>
+      <li data-k="c4"><input type="checkbox" id="c4"><label class="t" for="c4"><b>안동 반값여행 접수 여부 확인</b><span>여행 3일 전까지 사전신청 필수 → 10/20(화)이 사실상 마감. 2차 접수가 10/12 시작이라 이미 마감됐을 수 있음.</span></label></li>
+      <li data-k="c5"><input type="checkbox" id="c5"><label class="t" for="c5"><b>세계유산축전 23·24일 프로그램 확인</b><span>도산서원 야간 콘텐츠, 병산서원 ‘풍류병산’ 회차·예약 여부</span></label></li>
+      <li data-k="c6"><input type="checkbox" id="c6"><label class="t" for="c6"><b>겉옷·편한 신발 챙기기</b><span>강바람 부는 저녁은 꽤 쌀쌀. 하회마을·부용대는 흙길. 줄불놀이 보면 방석·담요·핫팩.</span></label></li>
+    </ul>
+    <div class="links">
+      <a href="https://www.gb-voyage.com" target="_blank" rel="noopener">경북봐야지 (줄불 예약)</a>
+      <a href="https://www.kh.or.kr" target="_blank" rel="noopener">국가유산진흥원 (세계유산축전)</a>
+      <a href="https://korean.visitkorea.or.kr" target="_blank" rel="noopener">대한민국 구석구석 (반값여행)</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 1일차 ===================== -->
+<section id="d1">
+  <h2>1일차 · 10/23 금 <small>도산서원 → 월영교</small></h2>
+  <ol class="tl day" data-date="2026-10-23">
+
+    <li data-t="07:50"><div class="time">07:50</div><div class="box">
+      <h3>문정 출발</h3>
+      <p class="lead">중부고속도로 → 호법JCT 영동고속도로 → 만종JCT 중앙고속도로 → 서안동IC</p>
+      <dl class="kv"><dt>거리·시간</dt><dd>약 250km · 3시간 내외 (휴게소 포함)</dd><dt>주의</dt><dd>금요일 출근 시간대라 성남~호법 구간 정체 가능</dd></dl>
+      <div class="links"><a href="https://map.naver.com/p/search/%EC%95%88%EB%8F%99%20108%ED%95%9C%EC%98%A5" target="_blank" rel="noopener">숙소 지도</a></div>
+    </div></li>
+
+    <li data-t="09:40"><div class="time">09:40</div><div class="box move">
+      <h3>단양팔경휴게소 (부산방향)</h3>
+      <p class="lead">20분 정도 쉬어가기</p>
+    </div></li>
+
+    <li data-t="11:00"><div class="time">11:00</div><div class="box">
+      <h3>안동 원도심 도착 · 주차</h3>
+      <p class="lead">숙소가 찜닭골목·신시장과 가까운 원도심이라 점심은 이 동네에서.</p>
+      <dl class="kv"><dt>주차</dt><dd>숙소에 미리 대 둘 수 있으면 가장 편함. 아니면 구시장 주변 공영·노상주차장</dd></dl>
+    </div></li>
+
+    <li data-t="11:15"><div class="time">11:15</div><div class="box food">
+      <h3>점심 · 구시장 찜닭골목 <span class="tag fd">식사</span></h3>
+      <p class="lead">골목 안 가게들 맛은 대동소이. 2인이면 ‘중’ 하나에 밥 추가로 충분.</p>
+      <dl class="kv"><dt>추천</dt><dd>위생찜닭 · 유진찜닭 · 현대찜닭</dd><dt>팁</dt><dd>유명한 집에 자리가 없으면 옆집도 무난</dd></dl>
+      <div class="links"><a href="#food">식당 상세 ↓</a></div>
+    </div></li>
+
+    <li data-t="12:40"><div class="time">12:40</div><div class="box move">
+      <h3>→ 도산서원 이동</h3>
+      <p class="lead">약 30km · 40분 (35번 국도, 도산면 방향)</p>
+    </div></li>
+
+    <li data-t="13:20"><div class="time">13:20</div><div class="box">
+      <h3>도산서원 <span class="tag ev">축전</span></h3>
+      <p class="lead">퇴계 이황의 서원. 도산서당·전교당, 강 건너 시사단까지 보고 나오기. 축전 기간이라 공연·전시가 있을 수 있음.</p>
+      <dl class="kv"><dt>관람</dt><dd>09:00–18:00 (입장마감 17:30)</dd><dt>요금</dt><dd>어른 2,000원</dd><dt>주차</dt><dd>무료</dd><dt>소요</dt><dd>1시간 30분</dd></dl>
+      <div class="links"><a href="https://map.naver.com/p/search/%EB%8F%84%EC%82%B0%EC%84%9C%EC%9B%90" target="_blank" rel="noopener">지도</a></div>
+    </div></li>
+
+    <li data-t="15:00"><div class="time">15:00</div><div class="box move">
+      <h3>→ 숙소 이동</h3>
+      <p class="lead">약 40분</p>
+    </div></li>
+
+    <li data-t="15:40"><div class="time">15:40</div><div class="box">
+      <h3>108한옥 체크인 · 휴식</h3>
+      <p class="lead">체크인 시간은 예약 문자 확인. 한옥에서 한숨 돌리기.</p>
+      <dl class="kv"><dt>주소</dt><dd>경북 안동시 법상윗길 6</dd></dl>
+    </div></li>
+
+    <li data-t="17:20"><div class="time">17:20</div><div class="box">
+      <h3>월영교 해질녘 산책</h3>
+      <p class="lead">숙소에서 차로 약 10분. 국내 최장 목책 인도교. 해 지는 시간(17:45경)에 맞춰 다리 건너 월영정까지.</p>
+      <dl class="kv"><dt>요금</dt><dd>무료</dd><dt>주차</dt><dd>월영교 주차장 (식당 손님은 까치구멍집 주차장 이용 가능)</dd></dl>
+      <div class="links"><a href="https://map.naver.com/p/search/%EC%9B%94%EC%98%81%EA%B5%90" target="_blank" rel="noopener">지도</a></div>
+    </div></li>
+
+    <li data-t="18:15"><div class="time">18:15</div><div class="box food">
+      <h3>저녁 · 까치구멍집 <span class="tag fd">식사</span><span class="tag bk">전화예약</span></h3>
+      <p class="lead">월영교 바로 앞. 헛제사밥의 원조격 집. 간고등어를 같이 시키면 안동 대표 음식을 한 번에.</p>
+      <dl class="kv"><dt>영업</dt><dd>09:30–20:30 (브레이크 15–16시, 마지막 주문 19:30)</dd><dt>주차</dt><dd>50대</dd><dt>전화</dt><dd><a href="tel:0548211056">054-821-1056</a></dd></dl>
+      <div class="links"><a href="https://map.naver.com/p/search/%EC%95%88%EB%8F%99%20%ED%97%9B%EC%A0%9C%EC%82%AC%EB%B0%A5%20%EA%B9%8C%EC%B9%98%EA%B5%AC%EB%A9%8D%EC%A7%91" target="_blank" rel="noopener">메뉴·사진 보기</a></div>
+    </div></li>
+
+    <li data-t="19:30"><div class="time">19:30</div><div class="box">
+      <h3>월영교 야경</h3>
+      <p class="lead">조명 켜진 다리를 한 번 더 걷고 숙소로.</p>
+    </div></li>
+
+    <li data-t="20:30"><div class="time">20:30</div><div class="box opt">
+      <h3>(선택) 도산서원 축전 야간 콘텐츠</h3>
+      <p class="lead">축전 기간 도산서원은 미디어극·야간 콘텐츠를 운영해요. 금요일 밤 회차가 있으면 월영교 야경 대신 가도 좋아요(숙소에서 40분). 시간은 출발 전 확인.</p>
+    </div></li>
+
+  </ol>
+</section>
+
+<!-- ===================== 2일차 ===================== -->
+<section id="d2">
+  <h2>2일차 · 10/24 토 <small>병산서원 → 하회마을 → 부용대</small></h2>
+  <ol class="tl day" data-date="2026-10-24">
+
+    <li data-t="08:30"><div class="time">08:30</div><div class="box food">
+      <h3>아침 · 옥야식당 <span class="tag fd">식사</span></h3>
+      <p class="lead">중앙신시장 안 50년 넘은 선지국밥집. 숙소에서 가까워요. 08:30 문 열자마자 차는 집이라 일찍.</p>
+      <dl class="kv"><dt>메뉴</dt><dd>선지국밥 · 육개장</dd></dl>
+      <div class="links"><a href="https://map.naver.com/p/search/%EC%95%88%EB%8F%99%20%EC%98%A5%EC%95%BC%EC%8B%9D%EB%8B%B9" target="_blank" rel="noopener">메뉴·사진 보기</a></div>
+    </div></li>
+
+    <li data-t="09:15"><div class="time">09:15</div><div class="box food">
+      <h3>(선택) 맘모스제과 <span class="tag fd">간식</span></h3>
+      <p class="lead">크림치즈빵으로 유명한 원도심 빵집. 이동 중 간식용으로. 이른 오전엔 진열이 덜 됐을 수 있어요.</p>
+      <div class="links"><a href="https://map.naver.com/p/search/%EC%95%88%EB%8F%99%20%EB%A7%98%EB%AA%A8%EC%8A%A4%EC%A0%9C%EA%B3%BC" target="_blank" rel="noopener">메뉴·사진 보기</a></div>
+    </div></li>
+
+    <li data-t="09:40"><div class="time">09:40</div><div class="box move">
+      <h3>체크아웃 → 병산서원</h3>
+      <p class="lead">약 30km · 40분. 마지막 3~4km는 좁은 비포장. 맞은편 차 오면 비켜주기.</p>
+    </div></li>
+
+    <li data-t="10:20"><div class="time">10:20</div><div class="box">
+      <h3>병산서원 <span class="tag ev">축전</span></h3>
+      <p class="lead">만대루에 앉아 낙동강과 병산을 보는 곳. 사람 몰리기 전 오전이 제일 좋아요. 11시 해설에 합류해도 좋음.</p>
+      <dl class="kv"><dt>관람</dt><dd>09:00–18:00 (10월까지 하절기)</dd><dt>요금</dt><dd>무료</dd><dt>주차</dt><dd>무료 · 화장실은 주차장 안내소 쪽</dd><dt>해설</dt><dd>10·11·13·14·15·16시</dd><dt>소요</dt><dd>1시간</dd></dl>
+      <div class="links"><a href="https://map.naver.com/p/search/%EB%B3%91%EC%82%B0%EC%84%9C%EC%9B%90" target="_blank" rel="noopener">지도</a></div>
+    </div></li>
+
+    <li data-t="11:20"><div class="time">11:20</div><div class="box move">
+      <h3>→ 하회마을 매표소 주차장</h3>
+      <p class="lead">약 15분 · 주차 무료. 매표소에서 표 사고 무료 셔틀로 마을 입구까지.</p>
+    </div></li>
+
+    <li data-t="11:40"><div class="time">11:40</div><div class="box food">
+      <h3>점심 · 하회마을 앞 <span class="tag fd">식사</span></h3>
+      <p class="lead">마을 들어가기 전에 먹고 들어가는 게 동선상 편해요.</p>
+      <dl class="kv"><dt>추천</dt><dd>목석원(입구 앞, 웨이팅 있음) · 하회장터 식당들 · 길풍(풍산읍, 넓은 주차장)</dd></dl>
+      <div class="links"><a href="#food">식당 상세 ↓</a></div>
+    </div></li>
+
+    <li data-t="13:00"><div class="time">13:00</div><div class="box">
+      <h3>하회마을 <span class="tag ev">축전</span></h3>
+      <p class="lead">양진당 · 충효당 · 삼신당 · 만송정 솔숲. 축전 기간이라 고택 공연·체험이 열려요.</p>
+      <dl class="kv"><dt>요금</dt><dd>어른 5,000원 (줄불놀이 관람권이 있으면 입장 포함)</dd><dt>주차</dt><dd>무료 · 셔틀 무료</dd><dt>관람</dt><dd>09:00 개장 · 10월은 마감시간이 당겨질 수 있음</dd><dt>소요</dt><dd>2시간</dd></dl>
+      <div class="note blue" style="margin-top:10px">줄불놀이(B안) 볼 거면: <b>13:00 매표소 옆 현장판매</b> 시작 시간에 맞춰 관람권부터 사고 입장. 사전예약했으면 그 표로 입장.</div>
+      <div class="links"><a href="https://map.naver.com/p/search/%EC%95%88%EB%8F%99%ED%95%98%ED%9A%8C%EB%A7%88%EC%9D%84" target="_blank" rel="noopener">지도</a></div>
+    </div></li>
+
+    <li data-t="15:10"><div class="time">15:10</div><div class="box">
+      <h3>부용대</h3>
+      <p class="lead">강 건너 절벽 위에서 하회마을 물돌이를 한눈에. 차로 돌아가서 화천서원 주차장에 대고 오솔길 250m(10분) 올라가면 정상. 내려오며 옥연정사·겸암정사.</p>
+      <dl class="kv"><dt>이동</dt><dd>하회마을 주차장에서 차로 약 20분 (광덕교 경유)</dd><dt>주차</dt><dd>화천서원 주차장 (광덕솔밭길 72)</dd><dt>소요</dt><dd>40분–1시간</dd></dl>
+      <div class="links"><a href="https://map.naver.com/p/search/%EB%B6%80%EC%9A%A9%EB%8C%80%20%EC%95%88%EB%8F%99" target="_blank" rel="noopener">지도</a></div>
+    </div></li>
+
+    <li data-t="16:10"><div class="time">16:10</div><div class="box" style="padding-bottom:6px">
+      <h3>마무리 선택</h3>
+      <div class="tabs" role="tablist">
+        <button class="on" data-pane="pA">A · 바로 귀경</button>
+        <button data-pane="pB">B · 줄불놀이 보고</button>
+      </div>
+      <div class="pane on" id="pA">
+        <dl class="kv"><dt>16:10</dt><dd>출발 → 서안동IC → 중앙·영동·중부</dd><dt>19:30경</dt><dd>문정 도착 (토요일 저녁 상행 정체에 따라 ±1시간)</dd></dl>
+      </div>
+      <div class="pane" id="pB">
+        <dl class="kv">
+          <dt>16:10</dt><dd>하회마을 근처 카페에서 쉬기</dd>
+          <dt>17:20</dt><dd>하회마을 매표소 주차장 복귀 → 만송정 관람 구역으로 (자리 잡기)</dd>
+          <dt>18:00</dt><dd><b>하회선유줄불놀이</b> (~20:00) — 줄불·낙화·달걀불</dd>
+          <dt>20:00</dt><dd>주차장 출차 혼잡, 30분 이상 각오</dd>
+          <dt>23:30경</dt><dd>문정 도착</dd>
+        </dl>
+        <div class="note red">관람료 1인 1만원 · 하회마을 입장 포함. 사전예약(경북봐야지) 또는 당일 13시 현장판매 300매. 강변이라 밤엔 꽤 추워요.</div>
+      </div>
+    </div></li>
+
+  </ol>
+</section>
+
+<!-- ===================== 식당 ===================== -->
+<section id="food">
+  <h2>식당 추천 <small>버튼을 누르면 네이버 지도에서 메뉴·사진 확인</small></h2>
+  <div class="foods">
+
+    <div class="food-c">
+      <span class="when">1일차 점심</span>
+      <div class="cat">안동찜닭 · 구시장 찜닭골목</div>
+      <h3>위생찜닭</h3>
+      <p>35년 넘은 골목 대표집. 센 불로 졸여 양념이 진하고 매콤달큰. 보통/매운맛 선택.</p>
+      <div class="links"><a href="https://map.naver.com/p/search/%EC%95%88%EB%8F%99%20%EC%9C%84%EC%83%9D%EC%B0%9C%EB%8B%AD" target="_blank" rel="noopener">메뉴·사진 보기</a></div>
+    </div>
+
+    <div class="food-c">
+      <span class="when">1일차 점심 대안</span>
+      <div class="cat">안동찜닭 · 구시장 찜닭골목</div>
+      <h3>유진찜닭</h3>
+      <p>양 푸짐하기로 이름난 집. 찜닭 말고 쪼림닭도 있어요.</p>
+      <div class="links"><a href="https://map.naver.com/p/search/%EC%95%88%EB%8F%99%20%EC%9C%A0%EC%A7%84%EC%B0%9C%EB%8B%AD" target="_blank" rel="noopener">메뉴·사진 보기</a></div>
+    </div>
+
+    <div class="food-c">
+      <span class="when">1일차 저녁</span>
+      <div class="cat">헛제사밥 · 간고등어 · 월영교 앞</div>
+      <h3>헛제사밥 까치구멍집</h3>
+      <p>나물·전·탕국이 놋그릇에 나오는 헛제사밥. 탕평채·간고등어도.</p>
+      <div class="meta">09:30–20:30 · 브레이크 15–16 · L.O 19:30 · 주차 50대 · <a href="tel:0548211056">054-821-1056</a></div>
+      <div class="links"><a href="https://map.naver.com/p/search/%EC%95%88%EB%8F%99%20%ED%97%9B%EC%A0%9C%EC%82%AC%EB%B0%A5%20%EA%B9%8C%EC%B9%98%EA%B5%AC%EB%A9%8D%EC%A7%91" target="_blank" rel="noopener">메뉴·사진 보기</a></div>
+    </div>
+
+    <div class="food-c">
+      <span class="when">2일차 아침</span>
+      <div class="cat">선지국밥 · 중앙신시장</div>
+      <h3>옥야식당</h3>
+      <p>대파 듬뿍 경상도식 선지국밥. 한우 고기가 넉넉히 들어가요. 깍두기 국물이 포인트.</p>
+      <div class="meta">08:30 오픈 · 이른 시간에도 만석</div>
+      <div class="links"><a href="https://map.naver.com/p/search/%EC%95%88%EB%8F%99%20%EC%98%A5%EC%95%BC%EC%8B%9D%EB%8B%B9" target="_blank" rel="noopener">메뉴·사진 보기</a></div>
+    </div>
+
+    <div class="food-c">
+      <span class="when">아무 때나 · 원도심</span>
+      <div class="cat">간고등어 정식</div>
+      <h3>일직식당</h3>
+      <p>간고등어 명인 이동삼 씨 이름을 건 식당. 구이 정식 먹고 간고등어 사 오기 좋아요.</p>
+      <div class="links"><a href="https://map.naver.com/p/search/%EC%95%88%EB%8F%99%20%EC%9D%BC%EC%A7%81%EC%8B%9D%EB%8B%B9" target="_blank" rel="noopener">메뉴·사진 보기</a></div>
+    </div>
+
+    <div class="food-c">
+      <span class="when">2일차 점심</span>
+      <div class="cat">찜닭 · 간고등어 · 하회마을 입구</div>
+      <h3>목석원</h3>
+      <p>하회마을 입구 바로 앞. 웨이팅이 있지만 회전이 빠른 편. 음식은 조금 오래 걸려요.</p>
+      <div class="links"><a href="https://map.naver.com/p/search/%EC%95%88%EB%8F%99%20%EB%AA%A9%EC%84%9D%EC%9B%90" target="_blank" rel="noopener">메뉴·사진 보기</a></div>
+    </div>
+
+    <div class="food-c">
+      <span class="when">2일차 점심 대안</span>
+      <div class="cat">헛제사밥 · 간고등어 · 풍산읍</div>
+      <h3>길풍</h3>
+      <p>병산서원·하회마을 다녀오는 길에 들르기 좋은 넓은 한식당. 헛제사밥 일반상 14,000원, 간고등어 통구이 15,000원.</p>
+      <div class="meta">주말 09:30–20:00 · 전용 주차장</div>
+      <div class="links"><a href="https://map.naver.com/p/search/%EC%95%88%EB%8F%99%20%EA%B8%B8%ED%92%8D" target="_blank" rel="noopener">메뉴·사진 보기</a></div>
+    </div>
+
+    <div class="food-c">
+      <span class="when">간식 · 원도심</span>
+      <div class="cat">베이커리</div>
+      <h3>맘모스제과</h3>
+      <p>크림치즈빵으로 유명. 무화과파이·생강파운드도 평이 좋아요.</p>
+      <div class="links"><a href="https://map.naver.com/p/search/%EC%95%88%EB%8F%99%20%EB%A7%98%EB%AA%A8%EC%8A%A4%EC%A0%9C%EA%B3%BC" target="_blank" rel="noopener">메뉴·사진 보기</a></div>
+    </div>
+
+  </div>
+  <div class="note">가격·영업시간은 바뀔 수 있어요. 출발 전 지도 앱에서 한 번 더 확인하세요.</div>
+</section>
+
+<!-- ===================== 정보표 ===================== -->
+<section id="info">
+  <h2>한눈에 보기</h2>
+  <div class="card scroll">
+    <table class="tbl">
+      <thead><tr><th>장소</th><th>시간</th><th>요금</th><th>주차</th><th>머무는 시간</th></tr></thead>
+      <tbody>
+        <tr><td>도산서원</td><td>09:00–18:00<br>(입장 17:30)</td><td>2,000원</td><td>무료</td><td>1.5시간</td></tr>
+        <tr><td>월영교</td><td>상시</td><td>무료</td><td>월영교 주차장</td><td>1시간</td></tr>
+        <tr><td>병산서원</td><td>09:00–18:00</td><td>무료</td><td>무료</td><td>1시간</td></tr>
+        <tr><td>하회마을</td><td>09:00~ (10월 단축 가능)</td><td>5,000원</td><td>무료·셔틀</td><td>2시간</td></tr>
+        <tr><td>부용대</td><td>낮 시간</td><td>—</td><td>화천서원 주차장</td><td>40분–1시간</td></tr>
+        <tr><td>줄불놀이</td><td>10/24 18:00–20:00</td><td>10,000원</td><td>하회 매표소</td><td>2시간</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card scroll" style="margin-top:12px">
+    <table class="tbl">
+      <thead><tr><th>이동 구간</th><th>거리</th><th>차로</th></tr></thead>
+      <tbody>
+        <tr><td>문정 → 안동 원도심</td><td>약 250km</td><td>3시간 내외</td></tr>
+        <tr><td>원도심 → 도산서원</td><td>약 30km</td><td>40분</td></tr>
+        <tr><td>숙소 → 월영교</td><td>약 4km</td><td>10분</td></tr>
+        <tr><td>숙소 → 병산서원</td><td>약 30km</td><td>40분</td></tr>
+        <tr><td>병산서원 → 하회마을</td><td>약 6km</td><td>15분</td></tr>
+        <tr><td>하회마을 → 부용대</td><td>강 건너 우회</td><td>20분</td></tr>
+        <tr><td>하회·부용대 → 문정</td><td>약 260km</td><td>3시간+</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note red"><b>이번 주말 이벤트</b><br>
+  · <b>2026 세계유산축전 안동</b> — 10/9–10/25, 하회마을·봉정사·도산서원·병산서원. 도산서원 미디어극·야간 콘텐츠, 병산서원 ‘풍류병산’ 야간 공연 등.<br>
+  · <b>하회선유줄불놀이</b> — 10/24(토) 18:00–20:00. 경북봐야지 사전예약 + 당일 13시 현장판매 300매.</div>
+</section>
+
+<footer>
+  <p>참고: 경북매일(세계유산축전·줄불놀이 2026), 헤럴드경제(줄불놀이 예약·관람료), 뉴스서울(도산서원 관람시간), 한국관광공사 ktriptips(까치구멍집), 각 관광지 안내. 시간·요금은 현장 사정에 따라 바뀔 수 있어요.</p>
+  <p>mindtour.kr/tashi9/andong</p>
+</footer>
+
+</div>
+
+<script>
+(function(){
+  function store(k,v){try{ if(v===undefined) return localStorage.getItem(k); localStorage.setItem(k,v);}catch(e){return null}}
+  // 글자 크기
+  var btns=document.querySelectorAll('.fsbar button');
+  function setFs(v){document.documentElement.style.setProperty('--fs',v);btns.forEach(function(b){b.classList.toggle('on',b.dataset.fs===v)});store('andong_fs',v)}
+  btns.forEach(function(b){b.addEventListener('click',function(){setFs(b.dataset.fs)})});
+  var sf=store('andong_fs'); if(sf) setFs(sf);
+  // 체크리스트
+  var raw=store('andong_ck'), ck={}; try{ck=raw?JSON.parse(raw):{}}catch(e){ck={}}
+  document.querySelectorAll('#checklist li').forEach(function(li){
+    var k=li.dataset.k, box=li.querySelector('input');
+    if(ck[k]){box.checked=true;li.classList.add('done')}
+    box.addEventListener('change',function(){ck[k]=box.checked;li.classList.toggle('done',box.checked);store('andong_ck',JSON.stringify(ck))});
+  });
+  // A/B 탭
+  document.querySelectorAll('.tabs button').forEach(function(b){
+    b.addEventListener('click',function(){
+      b.parentNode.querySelectorAll('button').forEach(function(x){x.classList.toggle('on',x===b)});
+      document.querySelectorAll('.pane').forEach(function(p){p.classList.toggle('on',p.id===b.dataset.pane)});
+    });
+  });
+  // 여행 당일: 지금 할 일 표시
+  var now=new Date();
+  var ymd=now.getFullYear()+'-'+String(now.getMonth()+1).padStart(2,'0')+'-'+String(now.getDate()).padStart(2,'0');
+  var mins=now.getHours()*60+now.getMinutes();
+  document.querySelectorAll('.tl[data-date]').forEach(function(ol){
+    if(ol.dataset.date!==ymd) return;
+    var cur=null;
+    ol.querySelectorAll('li[data-t]').forEach(function(li){var p=li.dataset.t.split(':');if(+p[0]*60+ +p[1]<=mins) cur=li});
+    if(cur){cur.querySelector('.box').classList.add('now');setTimeout(function(){cur.scrollIntoView({behavior:'smooth',block:'center'})},400)}
+  });
+})();
+</script>
+</body>
+</html>
